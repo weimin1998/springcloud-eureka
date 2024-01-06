@@ -1,0 +1,33 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: order-service
+  datasource:
+    url: jdbc:mysql://192.168.61.107:3306/springcloudheima?useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  type-aliases-package: cn.itcast.user.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+logging:
+  level:
+    cn.itcast: debug
+  pattern:
+    dateformat: MM-dd HH:mm:ss:SSS
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:10086/eureka
+
+user-service:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+
+ribbon:
+  eager-load:
+    enabled: true
+    clients: user-service
