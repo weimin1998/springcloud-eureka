@@ -12,6 +12,7 @@
         <module>order-service</module>
         <module>eureka-server</module>
         <module>zuul</module>
+        <module>app1</module>
     </modules>
 
     <packaging>pom</packaging>
