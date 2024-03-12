@@ -28,8 +28,9 @@ public class IndexController {
         return "empty file";
     }
 
-    @PostMapping(value = "/upload2",consumes= MediaType.MULTIPART_FORM_DATA_VALUE)
-    public String upload2(@RequestPart("files") MultipartFile[] files){
+    //@PostMapping(value = "/upload2",consumes= MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "/upload2")
+    public String upload2(/*@RequestPart("files") */MultipartFile[] files){
 
         if(!ObjectUtils.isEmpty(files)){
             StringBuilder filesName = new StringBuilder();
